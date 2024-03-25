@@ -11,6 +11,7 @@ int main(void) {
 	int arr[5] = { 10, 20, 30, 40, 50 };
 	cout << arr << endl;		//배열이 메모리 공간에 할당죄어 있는 주소
 
+
 	return 0;
 
 }
