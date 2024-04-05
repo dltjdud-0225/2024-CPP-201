@@ -1,24 +1,18 @@
 ﻿#include<stdio.h>
 
-int main(void)
+void main(void)
 {
-	int arr[4] = { 10, 20, 30, 40 };
-	char str[4] = "swa";
+	char str1[] = "juyoung";
+	char str2[100];
 
-	int* pi = arr;
-	char* pc = str;
+	str2[0] = str1[0];
+	str2[1] = str1[1];
+	str2[2] = str1[2];
+	str2[3] = str1[3];
+	str2[4] = str1[4];
+	str2[5] = str1[5];
+	str2[6] = str1[6];
 
+	printf("%s", str2)
 
-	//두 코드의 연산은 같다.
-	printf("%d %d\n", arr[0], arr[1]);		
-	printf("%d %d\n\n", *(arr), *(arr + 1));
-
-	printf("%d %d\n", *(pi), *(pi + 1));		
-	printf("%d %d\n", pi[0], pi[1]);
-	printf("%c %c\n", *(pc), *(pc + 1));			
-	printf("%c %c\n", pc[0], pc[1]);
-
-
-
-	return 0;
 }
