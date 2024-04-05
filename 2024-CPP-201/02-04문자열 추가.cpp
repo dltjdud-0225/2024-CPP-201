@@ -1,11 +1,12 @@
-﻿#include<stdio.h>
-#include<string.h>
+﻿#include<iostream>
+#include<string>
+using namespace std;
 
 void main(void)
 {
-	char str1[100] = "juyoung";
+	string str1 = "juyoung";
 	//문장열 추가
-	strcat(str1, " is pretty💖");
+	str1 += " is pretty💖";
 
-	printf("%s ", str1);
+	cout << str1;
 }
