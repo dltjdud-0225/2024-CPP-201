@@ -1,9 +1,11 @@
-﻿#include<stdio.h>
-#include<String.h>
+﻿#include<iostream>
+#include<String>
+using namespace std;
+
 int main(void)
 {
-	char str1[] = "juyoung";
-	char str2[100];
+	string str1 = "juyoung";
+	string str2;
 
 	//str2[0] = str1[0];
 	//str2[1] = str1[1];
@@ -19,8 +21,9 @@ int main(void)
 	//}
 	//str2[i] = str1[i];	// '\0'
 
-	strcpy(str2, str1);
+	//strcpy(str2, str1);
+	str2 = str1;
 
-	printf("%s", str2);
-
+	//printf("%s", str2);
+	cout << str2;
 }
