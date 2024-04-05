@@ -1,5 +1,5 @@
 ﻿#include<stdio.h>
-
+#include<String.h>
 int main(void)
 {
 	char str1[] = "juyoung";
@@ -13,12 +13,13 @@ int main(void)
 	//str2[5] = str1[5];
 	//str2[6] = str1[6];
 
-	int i = 0;
-	for (; str1[i] != '\0'; i++) {
-		str2[i] = str1[i];
-	}
+	//int i = 0;
+	//for (; str1[i] != '\0'; i++) {
+	//	str2[i] = str1[i];
+	//}
+	//str2[i] = str1[i];	// '\0'
 
-	str2[i] = str1[i];	// '\0'
+	strcpy(str2, str1);
 
 	printf("%s", str2);
 
