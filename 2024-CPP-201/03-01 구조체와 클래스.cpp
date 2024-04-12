@@ -1,7 +1,6 @@
 ﻿#include <iostream>
 #include <string>
 using namespace std;
-
 // 클래스는 디폴트가 private
 class Student {
 public:
@@ -11,14 +10,12 @@ public:
 		: hakbun_(hakbun), name_(name)
 	{
 	}
-
-	//생성자 오버로딩
-	Student() 
+	// 생성자 오버로딩
+	Student()
 		: hakbun_(2121), name_("JWP")
 	{
 	}
-
-	//객체의 멤버를 출력하는 함수
+	// 객체의 멤버를 출력하는 함수
 	void print(void) {
 		cout << hakbun_ << " " << name_ << endl;
 	}
@@ -29,14 +26,24 @@ private:
 };
 
 void main(void)
-{	//동적 할당 : heap 영역에 할당. 실행시간(run time)에 메모리 크기 결정
+{
+	// 동적할당 : heap 영역에 할당. 실행시간(run time)에 메모리 크기 결정
 	Student* juyoung = new Student(2115, "윤주영");
-	//정적 할당 : stack 영역에 할당. 컴파일 시간에 메모리 크기 결정
+	// 정적할당 : stack 영역에 할당. 컴파일 시간에 메모리 크기 결정
 	Student jwp = Student();
+	Student* stu = new Student[3]{
+		{2115, "윤주영"},
+		{2121, "JWP"},
+		{2104, "위즈덤"}
+	};
 
-	(*juyoung).print();
+	juyoung->print();
 	jwp.print();
+	for (int i = 0; i < 3; i++)
+		stu[i].print();
 
-	//동적할당된 메모리 해제
+	// 동적할당된 메모리 해제
 	delete juyoung;
+	// 동적할당된 배열 삭제
+	delete[]stu;
 }
