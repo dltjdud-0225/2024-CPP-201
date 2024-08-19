@@ -4,21 +4,21 @@
 using namespace std;
 
 
-class Aniaml{
+class Animal{
 public:
 	void bark()
 	{
-
+		cout << "Àß Â¢´Â´Ù" << endl;
 	}
 
 	void sleep()
 	{
-
+		cout << "Àß ÀÜ´Ù" << endl;
 	}
 	
 	void eat()
 	{
-
+		cout << "Àß ¸Ô´Â´Ù" << endl;
 	}
 
 private:
@@ -29,7 +29,11 @@ private:
 
 void main(void)
 {
-	//µ¿ÀûÇÒ´ç
-	Aniaml* ani = new Aniaml();
-	delete animal;
+	Animal* ani = new Animal();
+	ani->bark();
+	ani->eat();
+	ani->sleep();
+
+	delete ani;
+
 }
