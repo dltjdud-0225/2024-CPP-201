@@ -16,15 +16,15 @@ public:      // ¸â¹ö ÇÔ¼ö
         cout << "³ªÀÌ " << age_ << endl;
     }
 
-    void bark() {
+    virtual void bark() {
         cout << "Àß Â¢´Â´Ù." << endl;
     }
 
-    void sleep() {
+    virtual void sleep() {
         cout << "Àß ÀÜ´Ù." << endl;
     }
 
-    void eat() {
+    virtual void eat() {
         cout << "Àß ¸Ô´Â´Ù." << endl;
     }
 
@@ -44,15 +44,15 @@ public:
     }
 
     //TODO : Á¤Àû ¹ÙÀÎµùÀ» µ¿Àû¹ÙÀÎµùÀ¸·Î °íÄ¡±â
-    void bark() {
+    void bark() override {
         cout << "ÅåÅå" << endl;
     }
 
-    void sleep() {
+    void sleep() override {
         cout << "ÄðÄð" << endl;
     }
 
-    void eat() {
+    void eat() override {
         cout << "³È³È" << endl;
     }
 
