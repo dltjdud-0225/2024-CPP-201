@@ -18,6 +18,10 @@ public:      // 멤버 함수
     virtual ~Animal() {
         cout << "Animal 소멸자" << endl;
     }
+    //실제가 없으므로 순수가상함수로 처리(자식 클래스에서 정의해야함)
+    virtual void bark() = 0;
+    virtual void sleep() = 0;
+    virtual void eat() = 0;
 
     virtual void bark() {
         cout << "잘 짖는다." << endl;
@@ -45,7 +49,7 @@ public:
     {
         cout << "인권존재여부 " << right_ << endl;
     }
-    ~Human() {
+    virtual ~Human() {
         cout << "Human 소멸자" << endl;
     }
 
@@ -68,6 +72,7 @@ private:
 
 void main(void)
 {
+    //추상클래스(순수가상함수가 있는)는 객체를 생성할 수 없다
     Animal* ani = new Animal("정민레이디", 18);      // 동적할당
     ani->bark();
     ani->eat();
