@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -25,7 +26,6 @@ public:
     virtual void attack(Clothes* target) = 0;
     //*참조
 
-
     string name_;
     int price_;
     int making_time_;
@@ -44,9 +44,9 @@ public:
     }
 
     void attack(Clothes* targe) {
+        //TOBO : 매 3타마다 치명타를 주기
         targe->beauty_ -= beauty_;
     }
-
 
     int norigae_;        // 노리개
     int jugori_;        // 저고리
@@ -90,14 +90,49 @@ private:
 int main(void) {
     Clothes* player = new Hanbok("곤룡포", 100, 10, 9999, 0, 0);
     Clothes* chingu = new Kimono("나마에와", 10, 1, 9, 1);
+
     player->show();
     chingu->show();
+    int choice;
 
-    cout << "-" << endl;
+    cout << "----------------------------------" << endl;
     cout << "1. 공격" << endl;
     cout << "2. 특수공격1" << endl;
     cout << "3. 특수공격2" << endl;
     cout << "4. 도망" << endl;
+
+    while (true) {
+        system("cls");
+        player->show();
+        cout << endl << endl;
+        chingu->show();
+
+        cout << "----------------------------------" << endl;
+        cout << "1. 공격" << endl;
+        cout << "2. 특수공격1" << endl;
+        cout << "3. 특수공격2" << endl;
+        cout << "4. 도망" << endl;
+        cin >> choice;
+
+        switch (choice)
+        {
+        case 1:
+            player->attack(chingu);
+            break;
+        case 2:
+            cout << "특수공격1" << endl;
+            break;
+        case 3:
+            cout << "특수공격2" << endl;
+            break;
+        case 4:
+            cout << "도망" << endl;
+            break;
+        default:
+            break;
+        }
+
+    }
 
     delete chingu;
     delete player;
