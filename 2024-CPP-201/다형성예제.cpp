@@ -43,13 +43,20 @@ public:
         cout << "저고리 : " << jugori_ << endl;
     }
 
-    void attack(Clothes* targe) {
+    void attack(Clothes* target) {
         //TOBO : 매 3타마다 치명타를 주기
-        targe->beauty_ -= beauty_;
+        attack_count_++;
+        if (attack_count_ == 3) {
+            target->beauty_ -= beauty_ * 2;
+            attack_count_ = 0;
+        }
+        else
+            target->beauty_ -= beauty_;
     }
 
     int norigae_;        // 노리개
     int jugori_;        // 저고리
+    int attack_count_;  // 공격 횟수
 };
 
 class Kimono : public Clothes {
@@ -79,7 +86,8 @@ public:
         cout << "자수 : " << embroidery_ << endl;
     }
 
-    void attack(Clothes* targe) {
+    void attack(Clothes* targe) override
+    {
         targe->beauty_ -= beauty_;
     }
 
