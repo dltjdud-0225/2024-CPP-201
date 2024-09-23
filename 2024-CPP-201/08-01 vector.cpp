@@ -1,35 +1,33 @@
 #include<iostream>
-#include<vector>
+#include<map>
 #include<string>
 
 using namespace std;
 
 void main(void) {
 
-	vector<string> cy;
-
-	//요소 추가
-	cy.push_back("채연");
-	cy.push_back("해인");
-	cy.push_back("우석");
-	cy.push_back("덱스");
-	cy.push_back("정국");
+	map<string, int> guardian;
+	
+	// 요소 추가
+	guardian["김신"] = 900;
+	guardian["지은탁"] = 19;
+	guardian["저승사자"] = 300;
+	guardian["써니"] = 29;
+	guardian["유덕화"] = 25;
 
 	//요소 접근
-	cout << cy[0] << "의 퍼스트 : " << cy.at(1) << endl;
-	cout << cy.at(0) << "의 세컨드 : " << cy[2] << endl;
+	cout << "김신의 나이 : " << guardian["김신"] << endl;
+	cout << "저승사자의 나이 : " << guardian["저승사자"] << endl;
 
 	//요소 수정
-	cy[1] = "석진";
+	guardian["지은탁"] = 29;
 
 	//요소 갯수(size)
-	cout << cy[0] << "의 남자들★★★★★★" << endl;
-	for (int i = 1; i < cy.size(); i++)
-		cout << cy[i] << endl;
+	cout << guardian.size() << endl;
 
-	//마지막 요소 삭제
-	cy.pop_back();
-	cout << cy[0] << "의 남자들★★★★★★" << endl;
-	for (int i = 1; i < cy.size(); i++)
-		cout << cy[i] << endl;
+	// 모든 요소 출력
+	map<string, int>::iterator iter;
+	for (iter = guardian.begin(); iter != guardian.end(); iter++)
+		cout << iter->first << "는 " << iter->second << "살" << endl;
+	
 }
