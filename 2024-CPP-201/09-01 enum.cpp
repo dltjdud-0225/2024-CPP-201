@@ -2,20 +2,28 @@
 
 using namespace std;
 
-void mmain(void) {
-	// 0 : 한식, 1 : 일식, 2 : 중식
-	int style = 0;
+// enum 선언
+enum FoodStyle {
+    Korean,  // 0
+    Japanese, // 1
+    Chinese   // 2
+};
 
-	switch (style) {
-	case 0 : 
-		cout << "한식" << endl;
-		break;
-	case 1 :
-		cout << "일식" << endl;
-		break;
-	case 2:
-		cout << "중식" << endl;
-		break;
+int main(void) {
+    // enum 값을 사용
+    FoodStyle style = Korean;
 
-	}
+    switch (style) {
+    case Korean:
+        cout << "한식" << endl;
+        break;
+    case Japanese:
+        cout << "일식" << endl;
+        break;
+    case Chinese:
+        cout << "중식" << endl;
+        break;
+    }
+
+    return 0;
 }
