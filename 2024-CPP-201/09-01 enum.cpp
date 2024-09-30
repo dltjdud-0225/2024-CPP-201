@@ -12,7 +12,6 @@ enum FoodStyle {
 void main(void) {
     // enum 값을 사용
     FoodStyle style = FoodStyle::Korean;
-
     switch (style) {
     case FoodStyle::Korean:
         cout << "한식" << endl;
