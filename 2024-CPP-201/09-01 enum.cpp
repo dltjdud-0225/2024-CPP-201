@@ -9,21 +9,19 @@ enum FoodStyle {
     Chinese   // 2
 };
 
-int main(void) {
+void main(void) {
     // enum 값을 사용
-    FoodStyle style = Korean;
+    FoodStyle style = FoodStyle::Korean;
 
     switch (style) {
-    case Korean:
+    case FoodStyle::Korean:
         cout << "한식" << endl;
         break;
-    case Japanese:
+    case FoodStyle::Japanese:
         cout << "일식" << endl;
         break;
-    case Chinese:
+    case FoodStyle::Chinese:
         cout << "중식" << endl;
         break;
     }
-
-    return 0;
 }
